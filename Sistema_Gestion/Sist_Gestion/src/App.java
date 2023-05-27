@@ -29,7 +29,6 @@ public class App implements ActionListener {
         frame.setSize(500, 500);// da el tamaño de la venta;
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);// hace que se salga del programa al momento que cerras la
                                                              // ventana;
-
         frame.setVisible(true);// hace que se vea la ventana
         frame.add(panel);// agrega el panel a la ventana;
 
