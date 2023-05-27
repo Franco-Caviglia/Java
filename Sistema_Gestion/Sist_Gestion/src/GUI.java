@@ -1,3 +1,4 @@
+import javax.swing.AbstractButton;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -9,6 +10,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class GUI implements ActionListener {
+    // Campos y objetos que vamos a utilizar;
+    private static JLabel label;
+    private static JTextField userText;
+    private static JLabel labelPass;
+    private static JPasswordField passTextField;
+    private static JButton buttonSubmit;
+    private static JLabel succes;
+
     public static void main(String[] args) {
 
         JPanel panel = new JPanel();
@@ -21,9 +30,9 @@ public class GUI implements ActionListener {
 
         panel.setLayout(null);
 
-        JLabel label = new JLabel("User");
+        label = new JLabel("User");
         // creamos el texto para el campo de password;
-        JLabel labelPass = new JLabel("Password");
+        labelPass = new JLabel("Password");
 
         // creamos el texto para el campo de usuario;
         label.setBounds(10, 20, 80, 25);
@@ -36,19 +45,19 @@ public class GUI implements ActionListener {
         panel.add(labelPass);
 
         // creamos el campo de texto;
-        JTextField userText = new JTextField(20);
+        userText = new JTextField(20);
         userText.setBounds(100, 20, 165, 25);
         // agregamos el campo al panel;
         panel.add(userText);
 
         // creamos el campo para password;
-        JPasswordField passTextField = new JPasswordField(20);
+        passTextField = new JPasswordField(20);
         passTextField.setBounds(100, 50, 165, 25);
         // lo agregamos al panel;
         panel.add(passTextField);
 
         // creamos el boton para iniciar sesion;
-        JButton buttonSubmit = new JButton("Log in");
+        buttonSubmit = new JButton("Log in");
         buttonSubmit.setBounds(150, 90, 70, 20);
         buttonSubmit.addActionListener(new GUI());
         ;
@@ -56,7 +65,7 @@ public class GUI implements ActionListener {
         panel.add(buttonSubmit);
 
         // label para una vez ingresado;
-        JLabel succes = new JLabel("");
+        succes = new JLabel("");
         succes.setBounds(10, 110, 300, 25);
         panel.add(succes);
 
@@ -64,6 +73,11 @@ public class GUI implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        System.out.println("Succes");
+        String user = userText.getText();
+        String password = passTextField.getText();
+
+        if (user.equals("Fran") && password.equals("1234")) {
+            succes.setText("Login successful!");
+        }
     }
 }
