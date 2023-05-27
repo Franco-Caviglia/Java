@@ -72,10 +72,13 @@ public class GUI implements ActionListener {
     }// termina clase GUI;
 
     @Override
+    // sobreescribimos el metodo actionEvent, para que actue con nuestro boton;
     public void actionPerformed(ActionEvent e) {
+        // Declaramos e inicializamos las variables de inicio de sesion;
         String user = userText.getText();
         String password = passTextField.getText();
 
+        // Definimos las condiciones para nuestra cuenta;
         if (user.equals("Fran") && password.equals("1234")) {
             succes.setText("Login successful!");
         }
