@@ -15,9 +15,8 @@ public class App implements ActionListener {
     // Creamos los textos que vamos a usar para pedir la info;
     private static JLabel nombreLabel;
     private static JButton agregarButton;
+    private static JLabel usuariosListados;
 
-    // Creamos la lista;
-    private static JList listaUsuarios;
     // Creamos campos para llenar los datos;
     private static JTextField usuarioTextField;
 
@@ -38,6 +37,9 @@ public class App implements ActionListener {
         panel.setLayout(null);
 
         // -------------Seccion lista----------------------------
+        usuariosListados = new JLabel("Listado");
+        usuariosListados.setBounds(135, 70, 100, 25);
+        panel.add(usuariosListados);
         JList<String> listaUsuarios = new JList<String>(lista);
         listaUsuarios.setBounds(135, 100, 200, 300);
         panel.add(listaUsuarios);
